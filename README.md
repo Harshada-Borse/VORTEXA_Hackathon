@@ -88,10 +88,10 @@ candidates</p>
             <img src="UI_output\Match_and_Short.png" alt="form" height="100">
         </li>
         <li>
-            <img src="UI_output\output1.jpg" alt="form" height="100">
+            <img src="UI_output\output1.png" alt="form" height="100">
         </li>
         <li>
-            <img src="UI_output\output2.jpg" alt="form" height="100">
+            <img src="UI_output\output2.png" alt="form" height="100">
         </li>
 
     </ul>
