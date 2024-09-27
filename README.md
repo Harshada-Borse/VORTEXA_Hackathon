@@ -79,7 +79,7 @@ candidates</p>
     <summary>click Here to view</summary>
     <ul>
         <li>
-            <video src="UI_output/output.mp4" alt="UI" height="100" controls></video>
+            <video src="UI_output/output_video.mp4" alt="UI" height="100" controls></video>
         </li>
         <li>
             <img src="UI_output\Match_and_Short.png" alt="form" height="100">
