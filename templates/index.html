@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="AI-powered Resume Screening Tool" />
+    <meta name="author" content="YourTeamName" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <title>Match & Short</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      href="static/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link href="static/assets/images/resume.ico" rel="icon" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="static/assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="static/assets/css/styles.css" />
+    <link rel="stylesheet" href="static/assets/css/owl.css" />
+    <link rel="stylesheet" href="static/assets/css/lightbox.css" />
+    <link rel="stylesheet" href="static/style.css" />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .container {
+        margin-top: 50px;
+      }
+      .card {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .card-header {
+        background-color: #333333;
+        color: white;
+        border-radius: 10px 10px 0 0;
+        padding: 10px 20px;
+      }
+      .card-body {
+        padding: 20px;
+      }
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+      table {
+        width: auto; /* Set the width to auto for required width only */
+        margin-top: 20px;
+        border-collapse: collapse;
+        margin-left: auto; /* Center the table horizontally */
+        margin-right: auto; /* Center the table horizontally */
+      }
+      th, td {
+        padding: 10px;
+        text-align: center; /* Center content in the table */
+        border: 1px solid #ddd;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="main-nav">
+              <!-- Logo Start -->
+              <a href="/" class="logo">
+                <i class="fas fa-briefcase"></i> Match & Short
+              </a>
+              <!-- Logo End -->
+              <!-- Menu Start -->
+              <ul class="nav">
+                <li class="scroll-to-section">
+                  <a href="#top" class="active">Home</a>
+                </li>
+              </ul>
+              <!-- Menu End -->
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <section class="section main-banner" id="top" data-section="section1">
+      <video autoplay muted loop id="bg-video">
+        <source src="static\assets\images\resume-back.mp4" type="video/mp4" />
+      </video>
+      <div class="video-overlay header-text">
+        <div class="container">
+          <div class="row search-section justify-content-center">
+            <div class="col-md-8">
+              <h1 class="text-center">Revolutionize Your Hiring Process!</h1>
+              <p align="center">
+                <img
+                  align="center"
+                  src="https://readme-typing-svg.herokuapp.com?color=%2300C4FF&lines=👋🏻+Welcome+to+Match-And-Short+👋🏻;👨🏻‍💻+Let's+Make+Hiring+Easy+👩🏻‍💻;"
+                />
+              </p>
+              <img
+                src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2.5"
+              />
+              <br />
+              <br />
+              <p class="text-center">
+                Harness the power of AI to screen resumes and discover the best
+                talent effortlessly.
+                <br />
+                <br />
+                Say goodbye to manual reviews and hello to smarter hiring 😊!!
+              </p>
+              <div class="text-center mt-4">
+                <a href="#matcher" class="btn btn-outline-info">Get Started</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ***** Main Banner Area End ***** -->
+
+    <!-- ***** Matcher Section Start ***** -->
+    <div class="container" id="matcher">
+      <div class="card">
+        <div class="card-header text-center">
+          <h2>Give Job Description & Find Match Resumes</h2>
+        </div>
+        <div class="card-body">
+          <form method="POST" action="/matcher" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="job_description">Job Description:</label>
+              <textarea
+                class="form-control"
+                id="job_description"
+                name="job_description"
+                rows="5"
+                placeholder="Enter Job Description Here..."
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="resumes">Upload Resumes:</label>
+              <p>Upload More Than 5 Resumes .....</p>
+              <input
+                type="file"
+                class="form-control"
+                id="resumes"
+                name="resumes"
+                multiple
+                required
+                accept=".pdf, .docx, .txt"
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-outline-info"
+              style="background-color: #333333; color: white"
+            >
+              Match Resumes
+            </button>
+          </form>
+          {% if message %}
+          <div class="alert alert-info mt-4">
+            <p>{{ message }}</p>
+            <div class="table-responsive">
+              <table class="table table-bordered" style="width: auto; margin: 0 auto;">
+                <thead>
+                  <tr>
+                    <th style="text-align: center;">Rank</th>
+                    <th style="text-align: center;">Resume</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for index in range(top_resumes|length) %}
+                  <tr>
+                    <td style="text-align: center;">{{ index + 1 }}</td>
+                    <td style="text-align: center;">
+                      {{ top_resumes[index].split('/')[-1] }} <!-- Display only the file name -->
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- ***** Resume Categorizer Section Start ***** -->
+    <div class="container mt-5">
+      <div class="card">
+        <div class="card-header text-center">
+          <h2>Resume Categorizer Application</h2>
+        </div>
+        <div class="card-body">
+          <form method="POST" action="/categorize_resumes" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="resumes_upload">Choose PDF Files (Multiple):</label>
+              <input
+                type="file"
+                class="form-control"
+                id="resumes_upload"
+                name="resumes_upload"
+                multiple
+                accept=".pdf"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="output_directory">Output Directory:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="output_directory"
+                name="output_directory"
+                placeholder="Enter output directory path"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Categorize Resumes</button>
+          </form>
+
+          <!-- Display the result here dynamically -->
+          {% if categorized_resumes %}
+          <div class="mt-4">
+            <h5>Categorized Resumes:</h5>
+            <ul>
+              {% for resume in categorized_resumes %}
+              <li>{{ resume }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>
+        Copyright © 2024 Match&Short All Rights Reserved. <br /><a
+          href="/"
+          target="_parent"
+          title="/"
+          >&hearts; Match&Short &hearts;</a
+        >
+      </p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

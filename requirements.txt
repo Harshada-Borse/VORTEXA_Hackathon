@@ -1,0 +1,5 @@
+pandas
+pickle
+pypdf
+werkzeug.utils
+flask
