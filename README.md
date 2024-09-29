@@ -107,7 +107,7 @@ candidates</p>
 <h2>Contributors</h2>
 
 <ul>
-  <li><a href="https://github.com/harshadaborse">Harshada Borse</a></li>
+  <li><a href="https://github.com/Harshada-Borse">Harshada Borse</a></li>
   <li><a href="https://github.com/SaniyaSamant">Saniya Samant</a></li>
   <li><a href="https://github.com/Harita-28">Harita Joshi</a></li>
   <li><a href="https://github.com/dip2109">Dipali Gangarde</a></li>
